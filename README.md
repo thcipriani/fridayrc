@@ -11,4 +11,4 @@ Good:
 
 Better:
 
-    echo "curl -s https://raw.github.com/thcipriani/fridayrc/master/fridayrc | bash" >> .$(basename $SHELL)rc
+    echo "curl -s https://raw.github.com/thcipriani/fridayrc/master/fridayrc | bash" >> "$HOME/.$(basename $SHELL)rc"
