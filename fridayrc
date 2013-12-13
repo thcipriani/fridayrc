@@ -4,8 +4,8 @@ trap "cleanup" INT
 trap "cleanup" EXIT
 
 audpid=0
-host='http://api.tylercipriani.com'
-video="$host/friday.gz"
+host="http://tylercipriani.s3.amazonaws.com/fridayrc"
+video="$host/friday.bz2"
 audio_wav="$host/friday.gsm.wav"
 local_wav="/tmp/friday.gsm.wav"
 audio_raw="$host/friday.raw"
@@ -68,7 +68,8 @@ import time
 fps = 16.5
 time_per_frame = 1.0 / fps
 buf = '' 
-frame = 0; next_frame = 0
+frame = 0
+next_frame = 0
 begin = time.time()
 try:
     for i, line in enumerate(sys.stdin):
@@ -85,4 +86,4 @@ try:
 except KeyboardInterrupt:
   pass
 EOF
-) < <(obtainium $video | gunzip -qc 2> /dev/null)
+) < <(obtainium $video | bunzip2 -q 2> /dev/null)
