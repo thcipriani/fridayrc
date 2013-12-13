@@ -1,0 +1,4 @@
+fridayrc
+========
+
+It's Friday!
