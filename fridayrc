@@ -18,6 +18,16 @@ has?() {
     command -v "$1" > /dev/null 2>&1
 }
 
+pythonian() {
+    if has? python2;
+        then python2 "$@"
+    elif has? python;
+        then python "$@"
+    else
+        error "Cannot haz pythons :(" && exit 1
+    fi
+}
+
 obtainium() {
     if has? curl; 
         then curl -s $1
@@ -62,7 +72,7 @@ audpid=$!
 
 # Sync FPS to reality as best as possible. Mac's freebsd version of date cannot
 # has nanoseconds so inject python. :/
-python <(cat <<EOF
+pythonian <(cat <<EOF
 import sys
 import time
 fps = 16.5
