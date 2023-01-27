@@ -7,8 +7,8 @@ Yesterday was Thursday.
 
 Good:
 
-    curl -s https://raw.github.com/thcipriani/fridayrc/master/fridayrc | bash
+    curl -s https://raw.githubusercontent.com/thcipriani/fridayrc/master/fridayrc | bash
 
 Better:
 
-    echo "curl -s https://raw.github.com/thcipriani/fridayrc/master/fridayrc | bash" >> "$HOME/.$(basename $SHELL)rc"
+    echo "curl -s https://raw.githubusercontent.com/thcipriani/fridayrc/master/fridayrc | bash" >> ~/.bashrc
